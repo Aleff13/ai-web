@@ -15,7 +15,7 @@ Este projeto é uma aplicação web que oferece um chat interativo, permitindo q
 - **HTML5 e CSS3**: Para estruturar e estilizar a interface do usuário.
 - **JavaScript (ES6)**: Implementa a lógica do chat e a integração com a API.
 - **API do Chrome 'ai'**: Realiza a comunicação com o modelo de linguagem.
-- **Referencia**: [Google Developers AI Doc](https://developer.chrome.com/docs/ai/built-in?hl=pt-br), [Promp API](https://github.com/explainers-by-googlers/prompt-api/)
+- **Referencia**: [Google Developers AI Doc](https://developer.chrome.com/docs/ai/built-in?hl=pt-br), [Prompt API](https://github.com/explainers-by-googlers/prompt-api/)
 
 ## Importante
 
