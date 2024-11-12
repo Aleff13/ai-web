@@ -13,5 +13,7 @@ submit.addEventListener("click", async (t) => {
   } catch (error) {
     outputDisplay.value =
       "Not working? Please go to chrome://flags/#prompt-api-for-gemini-nano and set 'to enabled' gemini-nano “Enabled”.";
+
+    console.log(error);
   }
 });
