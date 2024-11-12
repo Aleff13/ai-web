@@ -1,0 +1,61 @@
+.outputDisplay {
+  /* border: 5px; */
+  size: 2px;
+  /* border-width: 2px;
+  color: brown;
+  border-style: dotted; */
+  padding-left: 25vw;
+  padding-top: 10vh;
+}
+
+#output {
+  border-radius: 20px;
+  border-right: #3b3b3b 1px solid;
+  border-left: #2a2a2a 1px solid;
+  border-top: #5e5e5e 1px solid;
+  border-width: 2px;
+  width: 42vw;
+  height: 40vh;
+  background-color: #3f3f3f;
+  color: #919191;
+  font-size: large;
+}
+
+.inputHandler {
+  /* border: 5px; */
+  size: 2px;
+  /* border-width: 2px; */
+  /* color: brown; */
+  /* border-style: dotted; */
+  padding-left: 25vw;
+  padding-top: 2vh;
+}
+
+#prompt {
+  border-radius: 20px;
+  border-right: #000 1px solid;
+  border-left: #000 1px solid;
+  border-top: #5e5e5e 1px solid;
+  border-width: 2px;
+  width: 35vw;
+  height: 3vh;
+  background-color: #3f3f3f;
+  color: #919191;
+}
+
+#sendPrompt {
+  border-radius: 20px;
+  border: #1f1f1f 1px solid;
+  border-width: 2px;
+  width: 7vw;
+  height: 3vh;
+  background-color: rgb(74, 106, 95);
+}
+
+::placeholder {
+  text-align: left;
+}
+
+body {
+  background-color: #5e5e5e;
+}
