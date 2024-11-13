@@ -59,3 +59,24 @@
 body {
   background-color: #5e5e5e;
 }
+
+#history {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.historyNode {
+  border-radius: 20px;
+  border-right: #3b3b3b 1px solid;
+  border-left: #2a2a2a 1px solid;
+  border-top: #5e5e5e 1px solid;
+  border-width: 2px;
+  width: 15vw;
+  height: 15vh;
+  background-color: #3f3f3f;
+  color: #919191;
+  font-size: large;
+  scrollbar-width: none;
+}

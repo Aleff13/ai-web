@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Gemini Nano Local</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
+    <script type="module" src="./index.js"></script>
     <!-- Create a side list to see old conversations -->
+    <aside id="history">
+      <input type="button" id="exportHistory" value="Export" />
+    </aside>
     <div class="content">
       <div class="outputDisplay">
         <textarea name="" id="output" disabled="true"></textarea>
@@ -18,6 +22,5 @@
       </div>
     </div>
     <!-- todo: add a error wrapper -->
-    <script src="./index.js"></script>
   </body>
 </html>
