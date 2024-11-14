@@ -6,6 +6,7 @@
   border-style: dotted; */
   padding-left: 25vw;
   padding-top: 10vh;
+  position: relative;
 }
 
 #output {
@@ -43,7 +44,7 @@
   color: #919191;
 }
 
-#sendPrompt {
+button {
   border-radius: 20px;
   border: #1f1f1f 1px solid;
   border-width: 2px;
@@ -79,4 +80,9 @@ body {
   color: #919191;
   font-size: large;
   scrollbar-width: none;
+}
+
+aside {
+  background-color: #222222;
+  border-radius: 20px;
 }

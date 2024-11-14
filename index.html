@@ -9,16 +9,18 @@
   <body>
     <script type="module" src="./index.js"></script>
     <!-- Create a side list to see old conversations -->
-    <aside id="history">
-      <input type="button" id="exportHistory" value="Export" />
-    </aside>
-    <div class="content">
-      <div class="outputDisplay">
-        <textarea name="" id="output" disabled="true"></textarea>
-      </div>
-      <div class="inputHandler">
-        <input type="text" id="prompt" placeholder="Prompt..." />
-        <input type="button" id="sendPrompt" value="Send" />
+    <div style="display: flex; flex-direction: row">
+      <aside id="history">
+        <button id="exportHistory" style="display: none">Export</button>
+      </aside>
+      <div class="content">
+        <div class="outputDisplay">
+          <textarea name="" id="output" disabled="true"></textarea>
+        </div>
+        <div class="inputHandler">
+          <input type="text" id="prompt" placeholder="Prompt..." />
+          <button id="sendPrompt">Send</button>
+        </div>
       </div>
     </div>
     <!-- todo: add a error wrapper -->

@@ -1,13 +1,12 @@
 import { History } from "./history.js";
+const history = new History();
+const worker = new Worker("xlsxWorker.js");
 
 const submit = document.getElementById("sendPrompt");
 const exportHistory = document.getElementById("exportHistory");
-
 const promptInput = document.getElementById("prompt");
 const outputDisplay = document.getElementById("output");
 const historyDisplay = document.getElementById("history");
-
-const history = new History();
 
 submit.addEventListener("click", async (t) => {
   try {
@@ -36,21 +35,27 @@ submit.addEventListener("click", async (t) => {
     historyNode.className = "historyNode";
     historyNode.value = prompt + response;
     historyDisplay.appendChild(historyNode);
+    exportHistory.style.display = "flex";
   }
 });
 
 exportHistory.addEventListener("click", async (e) => {
-  const XLSX = await import(
-    "https://cdn.sheetjs.com/xlsx-0.20.3/package/xlsx.mjs"
-  );
-
-  const formatedHistory = history.list.map((v) => [v.prompt, v.response]);
-
-  const data = [["prompt", "response"], ...formatedHistory];
-
-  const wb = XLSX.utils.book_new();
-  const ws = XLSX.utils.aoa_to_sheet(data);
-  XLSX.utils.book_append_sheet(wb, ws, "historysheets");
-
-  XLSX.writeFile(wb, "history.xlsx");
+  worker.postMessage({
+    action: "processData",
+    taskType: "createSheet",
+    data: { historyList: history.list },
+  });
 });
+
+worker.onmessage = function (e) {
+  const blob = e.data;
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "history.xlsx";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+};
