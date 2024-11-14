@@ -32,7 +32,7 @@
   padding-top: 2vh;
 }
 
-#prompt {
+#message {
   border-radius: 20px;
   border-right: #000 1px solid;
   border-left: #000 1px solid;
@@ -42,6 +42,20 @@
   height: 3vh;
   background-color: #3f3f3f;
   color: #919191;
+}
+
+#prompt {
+  border-radius: 20px;
+  border-right: #000 1px solid;
+  border-left: #000 1px solid;
+  border-top: #5e5e5e 1px solid;
+  border-width: 2px;
+  width: 15vw;
+  height: 40vh;
+  margin: 2vh;
+  background-color: #3f3f3f;
+  color: #919191;
+  margin-top: 10vh;
 }
 
 button {

@@ -4,25 +4,37 @@ const worker = new Worker("xlsxWorker.js");
 
 const submit = document.getElementById("sendPrompt");
 const exportHistory = document.getElementById("exportHistory");
-const promptInput = document.getElementById("prompt");
+const messageInput = document.getElementById("message");
 const outputDisplay = document.getElementById("output");
 const historyDisplay = document.getElementById("history");
+const promptInput = document.getElementById("prompt");
+
+var session;
 
 submit.addEventListener("click", async (t) => {
   try {
+    const message = messageInput.value;
     const prompt = promptInput.value;
-    const session = await ai.assistant.create();
+    if (!session) {
+      session = await ai.assistant.create();
+    }
 
-    const stream = await session.promptStreaming(prompt);
+    const messageBuilder = (prompt, message) => {
+      return `${prompt} \n ${message}`;
+    };
+
+    const stream = await session.promptStreaming(
+      messageBuilder(prompt, message)
+    );
     for await (const chunk of stream) {
       outputDisplay.value = chunk;
     }
 
     const response = outputDisplay.value;
-    history.add(prompt, response);
+    history.add(message, response);
 
     //populate history
-    displayNewHistoryNode(prompt, response);
+    displayNewHistoryNode(message, response);
   } catch (error) {
     outputDisplay.value =
       "Not working? Please go to chrome://flags/#prompt-api-for-gemini-nano and set 'to enabled' gemini-nano “Enabled”.";

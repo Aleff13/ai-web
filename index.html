@@ -8,7 +8,7 @@
   </head>
   <body>
     <script type="module" src="./index.js"></script>
-    <!-- Create a side list to see old conversations -->
+    <!-- add button to close history -->
     <div style="display: flex; flex-direction: row">
       <aside id="history">
         <button id="exportHistory" style="display: none">Export</button>
@@ -18,11 +18,12 @@
           <textarea name="" id="output" disabled="true"></textarea>
         </div>
         <div class="inputHandler">
-          <input type="text" id="prompt" placeholder="Prompt..." />
+          <input type="text" id="message" placeholder="Message..." />
           <button id="sendPrompt">Send</button>
         </div>
       </div>
+        <textarea type="text" id="prompt" placeholder="Prompt..."></textarea>
+      </div>
     </div>
-    <!-- todo: add a error wrapper -->
   </body>
 </html>
