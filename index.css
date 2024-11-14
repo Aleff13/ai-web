@@ -6,6 +6,7 @@
   border-style: dotted; */
   padding-left: 25vw;
   padding-top: 10vh;
+  position: relative;
 }
 
 #output {
@@ -31,7 +32,7 @@
   padding-top: 2vh;
 }
 
-#prompt {
+#message {
   border-radius: 20px;
   border-right: #000 1px solid;
   border-left: #000 1px solid;
@@ -43,7 +44,21 @@
   color: #919191;
 }
 
-#sendPrompt {
+#prompt {
+  border-radius: 20px;
+  border-right: #000 1px solid;
+  border-left: #000 1px solid;
+  border-top: #5e5e5e 1px solid;
+  border-width: 2px;
+  width: 15vw;
+  height: 40vh;
+  margin: 2vh;
+  background-color: #3f3f3f;
+  color: #919191;
+  margin-top: 10vh;
+}
+
+button {
   border-radius: 20px;
   border: #1f1f1f 1px solid;
   border-width: 2px;
@@ -58,4 +73,30 @@
 
 body {
   background-color: #5e5e5e;
+}
+
+#history {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.historyNode {
+  border-radius: 20px;
+  border-right: #3b3b3b 1px solid;
+  border-left: #2a2a2a 1px solid;
+  border-top: #5e5e5e 1px solid;
+  border-width: 2px;
+  width: 15vw;
+  height: 15vh;
+  background-color: #3f3f3f;
+  color: #919191;
+  font-size: large;
+  scrollbar-width: none;
+}
+
+aside {
+  background-color: #222222;
+  border-radius: 20px;
 }
