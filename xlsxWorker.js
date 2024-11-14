@@ -25,8 +25,12 @@ self.onmessage = async function (e) {
 };
 
 function createSheet(historyList, XLSX) {
-  const formattedHistory = historyList.map((v) => [v.prompt, v.response]);
-  const sheetData = [["prompt", "response"], ...formattedHistory];
+  const formattedHistory = historyList.map((v) => [
+    v.prompt,
+    v.message,
+    v.response,
+  ]);
+  const sheetData = [["prompt", "message", "response"], ...formattedHistory];
 
   const wb = XLSX.utils.book_new();
   const ws = XLSX.utils.aoa_to_sheet(sheetData);

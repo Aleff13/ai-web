@@ -9,15 +9,11 @@ const outputDisplay = document.getElementById("output");
 const historyDisplay = document.getElementById("history");
 const promptInput = document.getElementById("prompt");
 
-var session;
-
 submit.addEventListener("click", async (t) => {
   try {
     const message = messageInput.value;
     const prompt = promptInput.value;
-    if (!session) {
-      session = await ai.assistant.create();
-    }
+    const session = await ai.assistant.create();
 
     const messageBuilder = (prompt, message) => {
       return `${prompt} \n ${message}`;
